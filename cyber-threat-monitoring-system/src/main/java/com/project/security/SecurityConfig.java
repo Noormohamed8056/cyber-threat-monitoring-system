@@ -52,6 +52,15 @@ public class SecurityConfig {
 
                         // PUBLIC ENDPOINTS
                         .requestMatchers(
+                                "/",
+                                "/error",
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**",
+                                "/v3/api-docs"
+                        ).permitAll()
+
+                        .requestMatchers(
                                 "/api/auth/**"
                         ).permitAll()
 
@@ -59,7 +68,6 @@ public class SecurityConfig {
                                 "/api/public/**"
                         ).permitAll()
 
-                        // ✅ IMPORTANT FIX (document download)
                         .requestMatchers(
                                 "/uploads/**"
                         ).permitAll()
@@ -84,7 +92,7 @@ public class SecurityConfig {
                                 "/api/alerts/**"
                         ).hasRole("ADMIN")
 
-                        // STUDENT
+                        // STUDENT + ADMIN
                         .requestMatchers(
                                 HttpMethod.POST,
                                 "/api/reports/**"
