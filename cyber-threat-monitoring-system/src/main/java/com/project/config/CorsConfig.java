@@ -18,10 +18,11 @@ public class CorsConfig {
     // ALLOWED ORIGINS (REACT FRONTEND PORTS)
     // ==========================================
     private static final List<String> ALLOWED_ORIGINS = Arrays.asList(
-            "http://localhost:3000",   // React default port
-            "http://localhost:5173",   // Vite React port
-            "http://localhost:8080",   // Same server
-            "http://localhost:4200"    // Angular (if needed)
+            "http://localhost:3000",
+            "http://localhost:5173",
+            "http://localhost:8080",
+            "http://localhost:4200",
+            "https://cyber-threat-monitoring-system.vercel.app"
     );
 
     // ==========================================
