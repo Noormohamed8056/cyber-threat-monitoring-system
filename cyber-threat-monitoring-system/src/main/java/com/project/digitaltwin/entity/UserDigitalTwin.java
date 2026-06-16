@@ -126,13 +126,13 @@ public class UserDigitalTwin {
 
     // ==========================================
     // SCORE HISTORY
-    // Stored as comma-separated integers
     // ==========================================
     @ElementCollection
     @CollectionTable(
             name = "twin_risk_score_history",
             joinColumns = @JoinColumn(name = "twin_id")
     )
+    @OrderColumn(name = "history_index")
     @Column(name = "risk_score")
     private List<Integer> riskScoreHistory;
 
@@ -144,6 +144,7 @@ public class UserDigitalTwin {
             name = "twin_category_history",
             joinColumns = @JoinColumn(name = "twin_id")
     )
+    @OrderColumn(name = "history_index")
     @Column(name = "category")
     private List<String> categoryHistory;
 
